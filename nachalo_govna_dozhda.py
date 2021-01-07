@@ -21,13 +21,13 @@ while 1 == 1:
 
     # движение kaki 1
     kaka_1.y = kaka_1.y + speedy+5
-    if kaka_1.bottom > 800:
+    if kakashka_ubiyca.y<kaka_1.bottom:
         kaka_1.y=0
         kakashka_ubiyca.y-=10
         kakashka_ubiyca.h+=10
     # движение kaki 2
     kaka_2.y = kaka_2.y + speedy
-    if kaka_2.bottom > 800:
+    if kakashka_ubiyca.y<kaka_2.bottom:
         kaka_2.y = 0
         kakashka_ubiyca.y -= 10
         kakashka_ubiyca.h += 10
