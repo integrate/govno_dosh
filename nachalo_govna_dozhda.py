@@ -3,8 +3,8 @@ import pygame, time, p_o_m_o_s_h
 pygame.init()
 tyu = int(600 / 60)
 pygame.key.set_repeat(tyu)
-speedy_kaka_1 = 0
-speedy_kaka_2 = 0
+speedy_kaka_1 = 7
+speedy_kaka_2 = 5
 pop = [600, 800]
 
 e = pygame.display.set_mode(pop)
@@ -51,8 +51,12 @@ while 1 == 1:
 
     if tualet.left < 0:
         tualet.left =0
-
-
+    le = tualet.colliderect(kaka_1)
+    ll=tualet.colliderect(kaka_2)
+    if ll==1:
+        print("Поймал левую")
+    if le==1:
+        print("Поймал правую")
     # рисование
     e.blit(kartinka_kaki, kaka_1)
     e.blit(kartinka_kaki, kaka_2)
