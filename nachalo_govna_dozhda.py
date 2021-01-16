@@ -3,21 +3,22 @@ import pygame, time, p_o_m_o_s_h
 pygame.init()
 tyu = int(600 / 60)
 pygame.key.set_repeat(tyu)
-speedy_kaka_1 = 7
-speedy_kaka_2 = 5
+speedy_kaka_1 = 29
+speedy_kaka_2 = 29
 pop = [600, 800]
 
 e = pygame.display.set_mode(pop)
 
 kakashka_ubiyca = pygame.Rect(0, 800, 600, 100)
-kaka_1 = pygame.Rect(450, -200, 150, 150)
-kaka_2 = pygame.Rect(150, -200, 150, 150)
-tualet = pygame.Rect(300, 600,200, 200)
+kaka_1 = pygame.Rect(450, -200, 100, 100)
+kaka_2 = pygame.Rect(150, -200, 100, 100)
+tualet = pygame.Rect(300, 600, 200, 200)
 kartinka_tualeta = pygame.image.load("govno_kartinke/ff.jpeg")
 kartinka_kaki = pygame.image.load("govno_kartinke/kk.jpeg")
-kartinka_kaki = p_o_m_o_s_h.izmeni_kartinku(kartinka_kaki, 150, 150, [255, 255, 255], 10)
+kartinka_kaki = p_o_m_o_s_h.izmeni_kartinku(kartinka_kaki, 100, 100, [255, 255, 255], 10)
 kartinka_tualeta = p_o_m_o_s_h.izmeni_kartinku(kartinka_tualeta, 200, 200, [16, 16, 16], 20)
 # kartinka_unitaza=pygame.image.load("govno_kartinke/ff.jpeg")
+nomer=pygame.event.custom_type()
 while 1 == 1:
     time.sleep(1 / 60)
     # управление
@@ -28,9 +29,10 @@ while 1 == 1:
 
         if s.type == pygame.KEYDOWN and s.key == pygame.K_a:
             tualet.x = tualet.x - 10
-
         if s.type == pygame.KEYDOWN and s.key == pygame.K_d:
             tualet.x = tualet.x + 10
+        if s.type==nomer:
+            exit()
     # движение tualeta
     tualet.bottom = kakashka_ubiyca.y
     # движение kaki 1
@@ -39,6 +41,8 @@ while 1 == 1:
         kaka_1.y = 0
         kakashka_ubiyca.y -= 10
         kakashka_ubiyca.h += 10
+
+
     # движение kaki 2
     kaka_2.y = kaka_2.y + speedy_kaka_2
     if kakashka_ubiyca.y < kaka_2.bottom:
@@ -46,17 +50,28 @@ while 1 == 1:
         kakashka_ubiyca.y -= 10
         kakashka_ubiyca.h += 10
 
+    if kakashka_ubiyca.h > 800:
+        kakashka_ubiyca.h = 0
+        kakashka_ubiyca.y=800
+        speedy_kaka_1 = 0
+        speedy_kaka_2 = 0
+        p_o_m_o_s_h.narisue_bukve()
+        pygame.time.set_timer(nomer, 5000, True)
+
     if tualet.right > 600:
-        tualet.right =600
+        tualet.right = 600
 
     if tualet.left < 0:
-        tualet.left =0
-    le = tualet.colliderect(kaka_1)
-    ll=tualet.colliderect(kaka_2)
-    if ll==1:
+        tualet.left = 0
+    ll = tualet.colliderect(kaka_1)
+    le = tualet.colliderect(kaka_2)
+    if ll == 1:
         print("Поймал левую")
-    if le==1:
+        kaka_1.y=-200
+    if le == 1:
         print("Поймал правую")
+        kaka_2.y=-200
+
     # рисование
     e.blit(kartinka_kaki, kaka_1)
     e.blit(kartinka_kaki, kaka_2)

@@ -1,5 +1,6 @@
 import pygame
 
+
 def izmeni_kartinku(kartinka, shirina, visota, uberi_cvet, porog):
     kartinka = pygame.transform.scale(kartinka, [shirina, visota])
     kartinka = kartinka.convert()
@@ -10,3 +11,8 @@ def izmeni_kartinku(kartinka, shirina, visota, uberi_cvet, porog):
     m1.to_surface(q2, kartinka, None, None, None)
     # q2.set_colorkey([0, 0, 0])
     return q2
+
+
+def narisue_bukve():
+    # нарисуй буквы gAme over
+    print("Игра закончилась. Вы проиграли")
