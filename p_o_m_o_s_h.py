@@ -1,4 +1,6 @@
 import pygame
+pygame.init()
+game_over = pygame.font.SysFont("arial", 50, True, False)
 
 
 def izmeni_kartinku(kartinka, shirina, visota, uberi_cvet, porog):
@@ -13,6 +15,7 @@ def izmeni_kartinku(kartinka, shirina, visota, uberi_cvet, porog):
     return q2
 
 
-def narisue_bukve():
+def narisue_bukvu(screen,color):
     # нарисуй буквы gAme over
-    print("Игра закончилась. Вы проиграли")
+    game_over_kartinka=game_over.render("Game Over",True,color)
+    screen.blit(game_over_kartinka,[150,400])
