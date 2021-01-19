@@ -3,8 +3,8 @@ import pygame, time, p_o_m_o_s_h
 pygame.init()
 tyu = int(600 / 60)
 pygame.key.set_repeat(tyu)
-speedy_kaka_1 = 29
-speedy_kaka_2 = 29
+speedy_kaka_1 = 5
+speedy_kaka_2 = 7
 pop = [600, 800]
 
 e = pygame.display.set_mode(pop)
