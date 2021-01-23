@@ -1,7 +1,7 @@
 import pygame
 pygame.init()
 game_over = pygame.font.SysFont("arial", 50, True, False)
-
+schet_ochkov_poymaneh_kakashek=pygame.font.SysFont("arial", 25, True, False)
 
 def izmeni_kartinku(kartinka, shirina, visota, uberi_cvet, porog):
     kartinka = pygame.transform.scale(kartinka, [shirina, visota])
@@ -19,3 +19,7 @@ def narisue_bukvu(screen,color):
     # нарисуй буквы gAme over
     game_over_kartinka=game_over.render("Game Over",True,color)
     screen.blit(game_over_kartinka,[150,400])
+
+def  schet_ochkov(screen,color):
+    schet_ochkov_poymaneh_kakashek_kartinka=schet_ochkov_poymaneh_kakashek.render("1 РАУНД: 0 ПОЙМАНЫЕ_КАКАШКИ",True,color)
+    screen.blit(schet_ochkov_poymaneh_kakashek_kartinka,[0,0])

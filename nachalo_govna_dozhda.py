@@ -3,8 +3,8 @@ import pygame, time, p_o_m_o_s_h
 pygame.init()
 tyu = int(600 / 60)
 pygame.key.set_repeat(tyu)
-speedy_kaka_1 = 100
-speedy_kaka_2 = 100
+speedy_kaka_1 = 10
+speedy_kaka_2 = 7
 pop = [600, 800]
 proigral=0
 e = pygame.display.set_mode(pop)
@@ -64,6 +64,7 @@ while 1 == 1:
 
     if tualet.left < 0:
         tualet.left = 0
+
     ll = tualet.colliderect(kaka_1)
     le = tualet.colliderect(kaka_2)
     if ll == 1:
@@ -72,6 +73,11 @@ while 1 == 1:
     if le == 1:
         print("Поймал правую")
         kaka_2.y = -200
+    if ll>0:
+        e.blit(schet_ochkov_poymaneh_kakashek_kartinka,[0,0])
+
+        schet_ochkov_poymaneh_kakashek_kartinka = p_o_m_o_s_h.schet_ochkov_poymaneh_kakashek.render("1 РАУНД: 0 ПОЙМАНЫЕ_КАКАШКИ",True,[56,66,66])
+
 
     # рисование
     e.blit(kartinka_kaki, kaka_1)
@@ -81,6 +87,7 @@ while 1 == 1:
     pygame.draw.rect(e, [110, 64, 21], kakashka_ubiyca)
     if proigral!=0:
         p_o_m_o_s_h.narisue_bukvu(e, [0, 0, 0, 0])
+    p_o_m_o_s_h.schet_ochkov(e, [255,55,77])
 
     pygame.display.flip()
     e.fill([44, 44, 44])
