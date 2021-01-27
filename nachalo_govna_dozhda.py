@@ -6,7 +6,7 @@ pygame.key.set_repeat(tyu)
 speedy_kaka_1 = 10
 speedy_kaka_2 = 7
 pop = [600, 800]
-proigral=0
+proigral = 0
 e = pygame.display.set_mode(pop)
 
 kakashka_ubiyca = pygame.Rect(0, 800, 600, 100)
@@ -52,12 +52,10 @@ while 1 == 1:
     if kakashka_ubiyca.h > 800:
         kakashka_ubiyca.h = 0
         kakashka_ubiyca.y = 800
-        proigral=1
+        proigral = 1
         speedy_kaka_1 = 0
         speedy_kaka_2 = 0
         pygame.time.set_timer(nomer, 5000, True)
-
-
 
     if tualet.right > 600:
         tualet.right = 600
@@ -73,11 +71,9 @@ while 1 == 1:
     if le == 1:
         print("Поймал правую")
         kaka_2.y = -200
-    if ll>0:
-        e.blit(schet_ochkov_poymaneh_kakashek_kartinka,[0,0])
-
-        schet_ochkov_poymaneh_kakashek_kartinka = p_o_m_o_s_h.schet_ochkov_poymaneh_kakashek.render("1 РАУНД: 0 ПОЙМАНЫЕ_КАКАШКИ",True,[56,66,66])
-
+    # if ll>0:
+    #     p_o_m_o_s_h.poi="РАУНД:1 1 ПОЙМАНЫЕ_КАКАШКИ"
+    #     e.blit(p_o_m_o_s_h.poi,[0,0])
 
     # рисование
     e.blit(kartinka_kaki, kaka_1)
@@ -85,9 +81,9 @@ while 1 == 1:
     # pygame.draw.rect(e,[255,255,255],tualet)
     e.blit(kartinka_tualeta, tualet)
     pygame.draw.rect(e, [110, 64, 21], kakashka_ubiyca)
-    if proigral!=0:
+    if proigral != 0:
         p_o_m_o_s_h.narisue_bukvu(e, [0, 0, 0, 0])
-    p_o_m_o_s_h.schet_ochkov(e, [255,55,77])
+    p_o_m_o_s_h.schet_ochkov(e, [255, 55, 77],8)
 
     pygame.display.flip()
     e.fill([44, 44, 44])

@@ -20,6 +20,11 @@ def narisue_bukvu(screen,color):
     game_over_kartinka=game_over.render("Game Over",True,color)
     screen.blit(game_over_kartinka,[150,400])
 
-def  schet_ochkov(screen,color):
-    schet_ochkov_poymaneh_kakashek_kartinka=schet_ochkov_poymaneh_kakashek.render("1 РАУНД: 0 ПОЙМАНЫЕ_КАКАШКИ",True,color)
+def  schet_ochkov(screen,color,shet):
+
+    qwer=str(shet)
+    poi = " РАУНД:1 " + qwer + " ПОЙМАНЫЕ КАКАШКИ "
+    # schet_ochkov_poymaneh_kakashek_kartinka=schet_ochkov_poymaneh_kakashek.render(qwer,True,color)
+    schet_ochkov_poymaneh_kakashek_kartinka=schet_ochkov_poymaneh_kakashek.render(poi,True,color)
+
     screen.blit(schet_ochkov_poymaneh_kakashek_kartinka,[0,0])
