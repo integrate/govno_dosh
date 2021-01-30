@@ -22,6 +22,7 @@ def narisue_bukvu(screen,color):
 
 def  schet_ochkov(screen,color,shet):
 
+
     qwer=str(shet)
     poi = " РАУНД:1 " + qwer + " ПОЙМАНЫЕ КАКАШКИ "
     # schet_ochkov_poymaneh_kakashek_kartinka=schet_ochkov_poymaneh_kakashek.render(qwer,True,color)
