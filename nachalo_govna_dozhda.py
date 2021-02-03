@@ -1,15 +1,15 @@
 import pygame, time, p_o_m_o_s_h
 
 pygame.init()
-tyu = int(600 / 60)
-pygame.key.set_repeat(tyu)
+pygame.key.set_repeat(10)
 speedy_kaka_1 = 20
-speedy_kaka_2 =20
-pop = [600, 800]
+speedy_kaka_2 = 20
+
 proigral = 0
-e = pygame.display.set_mode(pop)
-ochki=0
-uyt=0
+okno_programme = pygame.display.set_mode([600, 800])
+ochki = 0
+chislo = 20
+raund_kolv = 0
 kakashka_ubiyca = pygame.Rect(0, 800, 600, 100)
 kaka_1 = pygame.Rect(450, -200, 100, 100)
 kaka_2 = pygame.Rect(150, -200, 100, 100)
@@ -77,24 +77,26 @@ while 1 == 1:
     #     e.blit(p_o_m_o_s_h.poi,[0,0])
 
     # рисование
-    if ll==1:
-        ochki+=1
+    if ll == 1:
+        ochki += 1
 
     if le == 1:
-        ochki+=1
+        ochki += 1
 
-    if ochki>20:
-        uyt=+1
-    if proigral==0:
-        e.blit(kartinka_kaki, kaka_1)
-        e.blit(kartinka_kaki, kaka_2)
+    if ochki > chislo:
+        raund_kolv +=1
+        ochki=0
+
+    if proigral == 0:
+        okno_programme.blit(kartinka_kaki, kaka_1)
+        okno_programme.blit(kartinka_kaki, kaka_2)
         # pygame.draw.rect(e,[255,255,255],tualet)
-        e.blit(kartinka_tualeta, tualet)
-    pygame.draw.rect(e, [110, 64, 21], kakashka_ubiyca)
+        okno_programme.blit(kartinka_tualeta, tualet)
+    pygame.draw.rect(okno_programme, [110, 64, 21], kakashka_ubiyca)
     if proigral != 0:
-        p_o_m_o_s_h.narisue_bukvu(e, [0, 0, 0, 0])
+        p_o_m_o_s_h.narisue_bukvu(okno_programme, [0, 0, 0, 0])
 
-    p_o_m_o_s_h.schet_ochkov(e, [255, 55, 77],ochki,uyt)
+    p_o_m_o_s_h.schet_ochkov(okno_programme, [255, 55, 77], ochki, raund_kolv)
 
     pygame.display.flip()
-    e.fill([44, 44, 44])
+    okno_programme.fill([44, 44, 44])
