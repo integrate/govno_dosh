@@ -1,4 +1,4 @@
-import pygame, time, p_o_m_o_s_h
+import pygame, time, p_o_m_o_s_h, random
 
 pygame.init()
 pygame.key.set_repeat(10)
@@ -22,6 +22,7 @@ kartinka_tualeta = p_o_m_o_s_h.izmeni_kartinku(kartinka_tualeta, 200, 200, [16, 
 nomer = pygame.event.custom_type()
 while 1 == 1:
     time.sleep(1 / 60)
+
     # управление
     u = pygame.event.get()
     for s in u:
@@ -66,12 +67,24 @@ while 1 == 1:
 
     ll = tualet.colliderect(kaka_1)
     le = tualet.colliderect(kaka_2)
+    cef = random.randint(100, 500)
+    gef = random.randint(100, 500)
+    lt = kaka_1.colliderect(kaka_2)
+
+    if lt == 1:
+        kaka_1.left=kaka_2.right
+
+
     if ll == 1:
         print("Поймал левую")
         kaka_1.y = -200
+        kaka_1.x =cef
+
+
     if le == 1:
         print("Поймал правую")
         kaka_2.y = -200
+        kaka_2.x =gef
     # if ll>0:
     #     p_o_m_o_s_h.poi="РАУНД:1 1 ПОЙМАНЫЕ_КАКАШКИ"
     #     e.blit(p_o_m_o_s_h.poi,[0,0])
