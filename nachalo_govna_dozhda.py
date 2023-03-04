@@ -6,11 +6,11 @@ speedy_kaka_1 = 20
 speedy_kaka_2 = 20
 
 proigral = 0
-okno_programme = pygame.display.set_mode([600, 800])
+okno_programme = pygame.display.set_mode([600, 700])
 ochki = 0
 chislo = 20
 raund_kolv = 0
-kakashka_ubiyca = pygame.Rect(0, 800, 600, 100)
+kakashka_ubiyca = pygame.Rect(0, 700, 600, 100)
 kaka_1 = pygame.Rect(450, -200, 100, 100)
 kaka_2 = pygame.Rect(150, -200, 100, 100)
 tualet = pygame.Rect(300, 600, 200, 200)
@@ -51,7 +51,7 @@ while 1 == 1:
         kakashka_ubiyca.y -= 10
         kakashka_ubiyca.h += 10
 
-    if kakashka_ubiyca.h > 800:
+    if kakashka_ubiyca.h > 700:
         kakashka_ubiyca.h = 0
         kakashka_ubiyca.y = 800
         proigral = 1
