@@ -87,7 +87,7 @@ while 1 == 1:
         kaka_2.x =gef
     # if ll>0:
     #     p_o_m_o_s_h.poi="РАУНД:1 1 ПОЙМАНЫЕ_КАКАШКИ"
-    #     e.blit(p_o_m_o_s_h.poi,[0,0])
+    #     e.blit(p_o_m_o_s_h.poi,[0,0])dadaadadad
 
     # рисование
     if ll == 1:
